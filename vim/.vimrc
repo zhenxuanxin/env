@@ -32,7 +32,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
-Plugin 'valloric/youcompleteme'
+Plugin 'valloric/youcompleteme', {'do': 'git submodule update --init --recursive'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,6 +48,13 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" Plugin
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " System
 set clipboard=unnamed
