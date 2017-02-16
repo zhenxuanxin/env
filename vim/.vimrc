@@ -33,6 +33,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
 Plugin 'valloric/youcompleteme', {'do': 'git submodule update --init --recursive'}
+Plugin 'rizzatti/dash.vim'
+Plugin 'universal-ctags/ctags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,8 +54,8 @@ filetype plugin indent on    " required
 " Plugin
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
 
 " System
 set clipboard=unnamed
@@ -71,7 +73,7 @@ set expandtab       " tabs are spaces
 set number          " show line numbers
 set showcmd         " show command in bottom bar
 set cursorline      " highlight current line
-set guifont=Ubuntu\ Mono:h12
+set guifont=Ubuntu\ Mono:h16
 filetype indent on  " load filetype-specific indent files
 set wildmenu        " visual autocomplete for command menu
 set lazyredraw      " redraw only when we need to
@@ -92,8 +94,13 @@ set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
+
+" WhiteSpace
+set listchars=tab:->,trail:>,eol:$
+set list
+
 " space open/closes folds
-nnoremap <space> za 
+nnoremap <space> za
 
 " Movement
 " move vertically by visual line
@@ -119,4 +126,5 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>s :mksession<CR>
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR> 
-
+" auto copy backup to origin file
+au FileType crontab setlocal bkc=yes
