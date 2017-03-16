@@ -1,0 +1,15 @@
+#!/bin/sh
+
+function usage() {
+    echo "$0 <from /path/to/your/local/data>"
+}
+
+if [ 1 -ne $# ]; then
+    usage
+    exit -1
+fi
+
+from=$1
+to="zhenxuanxin@relay.fond.io:~/backup"
+
+time rsync -auv -e"ssh -p36000" --progress $from $to
