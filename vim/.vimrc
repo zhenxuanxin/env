@@ -35,6 +35,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'valloric/youcompleteme', {'do': 'git submodule update --init --recursive'}
 Plugin 'rizzatti/dash.vim'
 Plugin 'universal-ctags/ctags'
+Plugin 'taglist.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,9 +54,20 @@ filetype plugin indent on    " required
 
 " Plugin
 autocmd StdinReadPre * let s:std_in=1
+"NERDTree {
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
+"}
+
+"taglist {
+let Tlist_Show_One_File = 1      " Only show current file's taglist, default is all
+let Tlist_Exit_OnlyWindow = 1    " Exit vim when only taglist window
+let Tlist_Use_Right_Window = 0   " Show taglist window on right side
+let Tlist_GainFocus_On_ToggleOpen = 1 " Let gain focus on taglist window
+"let Tlist_Ctags_Cmd =  '/usr/local/bin/ctags' " Set ctags command location
+nnoremap <leader>tl :Tlist<CR>   " Set shortcut of Tlit
+"}
 
 " System
 set clipboard=unnamed
