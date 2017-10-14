@@ -29,6 +29,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plugin 'ascenator/L9', {'name': 'newL9'}
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
@@ -55,12 +56,15 @@ filetype plugin indent on    " required
 " Plugin
 autocmd StdinReadPre * let s:std_in=1
 "NERDTree {
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
 "}
 
 "taglist {
+set tags=tags;
+set autochdir
 let Tlist_Show_One_File = 1      " Only show current file's taglist, default is all
 let Tlist_Exit_OnlyWindow = 1    " Exit vim when only taglist window
 let Tlist_Use_Right_Window = 0   " Show taglist window on right side
@@ -92,7 +96,7 @@ set lazyredraw      " Redraw only when we need to
 set showmatch       " Highlight matching [{()}]
 set fileencoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb18030,gb2312,gbk,big5,cp936,latin1
-"set encoding=utf-8
+set encoding=utf-8
 "set termencoding=utf-8
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -140,3 +144,4 @@ nnoremap <leader>s :mksession<CR>
 nnoremap <leader><space> :nohlsearch<CR> 
 " Auto copy backup to origin file
 au FileType crontab setlocal bkc=yes
+
