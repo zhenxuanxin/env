@@ -33,7 +33,9 @@ Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
-Plugin 'valloric/youcompleteme', {'do': 'git submodule update --init --recursive'}
+if has('python') || has('python3')
+    Plugin 'valloric/youcompleteme', {'do': 'git submodule update --init --recursive'}
+endif
 Plugin 'rizzatti/dash.vim'
 Plugin 'universal-ctags/ctags'
 Plugin 'taglist.vim'
