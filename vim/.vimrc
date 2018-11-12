@@ -86,6 +86,7 @@ syntax enable       " Enable syntax processing
 set tabstop=4       " Number of visual spaces per TAB
 set softtabstop=4   " Number of spaces in tab when editing
 set expandtab       " Tabs are spaces
+set shiftwidth=4    " Size of 'Indent'
 
 " UI Config
 set number          " Show line numbers
