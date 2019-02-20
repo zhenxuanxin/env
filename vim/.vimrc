@@ -115,9 +115,9 @@ set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " Fold based on indent level
 
 " WhiteSpace
-set listchars=tab:->,trail:>,eol:$
+set listchars=tab:→\ ,trail:>,eol:↲,nbsp:␣,trail:·,extends:›,precedes:‹
+set showbreak=↩
 set list
-
 " Space open/closes folds
 nnoremap <space> za
 
