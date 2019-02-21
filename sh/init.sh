@@ -1,3 +1,4 @@
+#!/bin/bash
 # clone repository
 git clone git@github.com:zhenxxin:env.git ~/Develop/env
 git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
