@@ -1,10 +1,30 @@
 {
+    "editor.cursorSmoothCaretAnimation": true,
     "editor.fontSize": 16,
     "editor.fontFamily": "Consolas,Menlo, Monaco, 'Courier New', monospace",
+    "editor.formatOnSave": true,
     "editor.renderWhitespace": "all",
     "editor.suggestSelection": "first",
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
+
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript"
+    },
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "files.trimTrailingWhitespace": true,
+
+    "window.zoomLevel": 0,
+
+    "workbench.colorTheme": "Material Theme Palenight",
 
     "emmet.includeLanguages": {
         "wxml": "html"
@@ -27,20 +47,6 @@
       "html",
       { "language": "vue", "autoFix": true }
     ],
-
-    "files.associations": {
-        "*.cjson": "jsonc",
-        "*.wxss": "css",
-        "*.wxs": "javascript"
-    },
-    "files.autoSave": "afterDelay",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "files.trimTrailingWhitespace": true,
 
     "git.autofetch": true,
 
@@ -73,8 +79,4 @@
     },
 
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-
-    "window.zoomLevel": 0,
-
-    "workbench.colorTheme": "Material Theme Palenight",
 }
