@@ -63,20 +63,8 @@
     "terminal.integrated.fontSize": 14,
 
     "vim.easymotion": true,
-    "vim.enableNeovim": true,
     "vim.foldfix": true,
-    "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.useSystemClipboard": true,
-
-    "vs-kubernetes": {
-        "vs-kubernetes.kubectl-path": "/Users/zhenxxin/.vs-kubernetes/tools/kubectl/kubectl",
-        "vs-kubernetes.helm-path": "/Users/zhenxxin/.vs-kubernetes/tools/helm/darwin-amd64/helm",
-        "vs-kubernetes.draft-path": "/Users/zhenxxin/.vs-kubernetes/tools/draft/darwin-amd64/draft",
-        "vs-kubernetes.knownKubeconfigs": [
-            "/Users/zhenxxin/.kube/config"
-        ],
-        "vs-kubernetes.kubeconfig": "/Users/zhenxxin/.kube/config"
-    },
 
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
