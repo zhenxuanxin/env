@@ -1,0 +1,80 @@
+{
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Consolas,Menlo, Monaco, 'Courier New', monospace",
+    "editor.renderWhitespace": "all",
+    "editor.suggestSelection": "first",
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
+
+    "emmet.includeLanguages": {
+        "wxml": "html"
+    },
+
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.options": {
+        "env":{
+            "es6":true
+        },
+        "parserOptions": {
+            "ecmaVersion": 6 // or 7,8,9
+        },
+        "plugins": ["html"]
+    },
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "html",
+      { "language": "vue", "autoFix": true }
+    ],
+
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript"
+    },
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "files.trimTrailingWhitespace": true,
+
+    "git.autofetch": true,
+
+    "go.autocompleteUnimportedPackages": true,
+
+    "minapp-vscode.disableAutoConfig": true,
+
+    "phpcs.executablePath": "vendor/bin/phpcs",
+    "phpcs.showSources": true,
+    "phpcs.standard": "OSR0",
+
+    "powermode.enabled": true,
+
+    "terminal.integrated.fontSize": 14,
+
+    "vim.easymotion": true,
+    "vim.enableNeovim": true,
+    "vim.foldfix": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.useSystemClipboard": true,
+
+    "vs-kubernetes": {
+        "vs-kubernetes.kubectl-path": "/Users/zhenxxin/.vs-kubernetes/tools/kubectl/kubectl",
+        "vs-kubernetes.helm-path": "/Users/zhenxxin/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+        "vs-kubernetes.draft-path": "/Users/zhenxxin/.vs-kubernetes/tools/draft/darwin-amd64/draft",
+        "vs-kubernetes.knownKubeconfigs": [
+            "/Users/zhenxxin/.kube/config"
+        ],
+        "vs-kubernetes.kubeconfig": "/Users/zhenxxin/.kube/config"
+    },
+
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+    "window.zoomLevel": 0,
+
+    "workbench.colorTheme": "Material Theme Palenight",
+}
