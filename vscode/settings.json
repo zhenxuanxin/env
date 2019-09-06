@@ -1,12 +1,13 @@
 {
     "editor.cursorSmoothCaretAnimation": true,
     "editor.fontSize": 16,
-    "editor.fontFamily": "Consolas,Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "Consolas,'Courier New','DejaVu Sans Mono',‘Droid Sans Mono’,Menlo,Monaco,monospace,'Source Code Pro','Ubuntu Mono'",
     "editor.formatOnSave": true,
     "editor.renderWhitespace": "all",
     "editor.suggestSelection": "first",
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
+    "explorer.confirmDragAndDrop": false,
 
     "files.associations": {
         "*.cjson": "jsonc",
@@ -49,6 +50,7 @@
     ],
 
     "git.autofetch": true,
+    "git.confirmSync": false,
 
     "go.autocompleteUnimportedPackages": true,
 
