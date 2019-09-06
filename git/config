@@ -1,0 +1,7 @@
+[user]
+	name = Xuanxin Zhen
+	email = xuanxin.zhen@gmail.com
+[push]
+	default = simple
+[core]
+	editor = vim
