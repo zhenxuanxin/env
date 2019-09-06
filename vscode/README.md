@@ -2,7 +2,7 @@
 
 ## Usage
 
-Put a symlink in follow location with your OS to replace the default one, then same setting can be sync to all your environments:
+Put a symlink in follow location with your OS to replace the default one, then same setting can be sync to all your environments.
 
 - `Windows`: `%APPDATA%\Code\User\settings.json`
 - `macOS`: `$HOME/Library/Application Support/Code/User/settings.json`

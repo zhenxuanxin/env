@@ -9,3 +9,10 @@ ln -s ~/Develop/env/vim/.vimrc ~/.vimrc
 # install vim plugins
 vim +PluginInstall +qall
 
+# link .gitconfig
+ln -s ~/Develop/env/git/config ~/.gitconfig
+
+# link vscode
+ln -s ~/Develop/env/vscode/settings.json ~/.config/Code/User/settings.json
+ln -s ~/Develop/env/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+
