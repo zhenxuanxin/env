@@ -3,12 +3,39 @@
     "editor.fontSize": 16,
     "editor.fontFamily": "Consolas,'Courier New','DejaVu Sans Mono',‘Droid Sans Mono’,Menlo,Monaco,monospace,'Source Code Pro','Ubuntu Mono'",
     "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+        "strings": true
+    },
     "editor.renderWhitespace": "all",
     "editor.suggestSelection": "first",
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
     "explorer.confirmDragAndDrop": false,
-
+    "emmet.includeLanguages": {
+        "wxml": "html"
+    },
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.options": {
+        "env": {
+            "es6": true
+        },
+        "parserOptions": {
+            "ecmaVersion": 6 // or 7,8,9
+        },
+        "plugins": [
+            "html"
+        ]
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        {
+            "language": "vue",
+            "autoFix": true
+        }
+    ],
     "files.associations": {
         "*.cjson": "jsonc",
         "*.wxss": "css",
@@ -22,51 +49,23 @@
         "**/.factorypath": true
     },
     "files.trimTrailingWhitespace": true,
-
-    "window.zoomLevel": 0,
-
-    "workbench.colorTheme": "Material Theme Palenight",
-
-    "emmet.includeLanguages": {
-        "wxml": "html"
-    },
-
-    "eslint.alwaysShowStatus": true,
-    "eslint.autoFixOnSave": true,
-    "eslint.options": {
-        "env":{
-            "es6":true
-        },
-        "parserOptions": {
-            "ecmaVersion": 6 // or 7,8,9
-        },
-        "plugins": ["html"]
-    },
-    "eslint.validate": [
-      "javascript",
-      "javascriptreact",
-      "html",
-      { "language": "vue", "autoFix": true }
-    ],
-
     "git.autofetch": true,
     "git.confirmSync": false,
-
     "go.autocompleteUnimportedPackages": true,
-
     "minapp-vscode.disableAutoConfig": true,
-
     "phpcs.executablePath": "vendor/bin/phpcs",
     "phpcs.showSources": true,
     "phpcs.standard": "OSR0",
-
+    "python.jediEnabled": false,
     "powermode.enabled": true,
-
     "terminal.integrated.fontSize": 14,
-
     "vim.easymotion": true,
     "vim.foldfix": true,
     "vim.useSystemClipboard": true,
-
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Material Theme Darker",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
 }
