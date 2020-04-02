@@ -60,7 +60,7 @@
     "minapp-vscode.disableAutoConfig": true,
     "phpcs.executablePath": "vendor/bin/phpcs",
     "phpcs.showSources": true,
-    "phpcs.standard": "OSR0",
+    "phpcs.standard": "PSR2",
     "python.jediEnabled": false,
     "powermode.enabled": true,
     "terminal.integrated.fontSize": 14,
