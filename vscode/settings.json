@@ -1,7 +1,7 @@
 {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true // 用于替代 "eslint.autoFixOnSave": true,
     },
     "editor.cursorSmoothCaretAnimation": true,
     "editor.fontSize": 18,
@@ -19,7 +19,6 @@
         "wxml": "html"
     },
     "eslint.alwaysShowStatus": true,
-    "eslint.autoFixOnSave": true,
     "eslint.options": {
         "env": {
             "es6": true
@@ -31,14 +30,12 @@
             "html"
         ]
     },
+    "eslint.packageManager": "yarn",
     "eslint.validate": [
         "javascript",
         "javascriptreact",
         "html",
-        {
-            "language": "vue",
-            "autoFix": true
-        }
+        "vue"
     ],
     "files.associations": {
         "*.cjson": "jsonc",
@@ -64,12 +61,28 @@
     "python.jediEnabled": false,
     "powermode.enabled": true,
     "terminal.integrated.fontSize": 14,
+    "vetur.format.defaultFormatterOptions": {
+        "js-beautify-html": {
+            // force-aligned | force-expand-multiline
+            "wrap_attributes": "force-aligned"
+        },
+        "prettyhtml": {
+            "printWidth": 100,
+            "singleQuote": false,
+            "wrapAttributes": false,
+            "sortAttributes": true
+        },
+        "prettier": {
+            "semi": false,
+            "singleQuote": true
+        }
+    },
     "vim.easymotion": true,
     "vim.foldfix": true,
     "vim.useSystemClipboard": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Default Light+",
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     }
