@@ -60,6 +60,8 @@
     "phpcs.standard": "PSR2",
     "python.jediEnabled": false,
     "powermode.enabled": true,
+    "prettier.singleQuote": true,
+    "prettier.semi": false,
     "terminal.integrated.fontSize": 14,
     "vetur.format.defaultFormatterOptions": {
         "js-beautify-html": {
