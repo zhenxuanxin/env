@@ -1,9 +1,10 @@
 {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true // 用于替代 "eslint.autoFixOnSave": true,
+        "source.fixAll.eslint": true
     },
     "editor.cursorSmoothCaretAnimation": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.fontSize": 18,
     "editor.fontFamily": "Consolas,'Courier New','DejaVu Sans Mono',‘Droid Sans Mono’,Menlo,Monaco,monospace,'Source Code Pro','Ubuntu Mono'",
     "editor.formatOnSave": true,
@@ -12,6 +13,7 @@
     },
     "editor.renderWhitespace": "all",
     "editor.suggestSelection": "first",
+    "editor.tokenColorCustomizations": null,
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
     "explorer.confirmDragAndDrop": false,
@@ -52,16 +54,28 @@
     "files.trimTrailingWhitespace": true,
     "git.autofetch": true,
     "git.confirmSync": false,
+    "gitlens.hovers.currentLine.over": "line",
     "go.autocompleteUnimportedPackages": true,
     "go.formatTool": "gofmt",
+    "go.toolsManagement.autoUpdate": true,
+    "go.useLanguageServer": false,
+    "hediet.vscode-drawio.theme": "automatic",
+    "hediet.vscode-drawio.codeLinkActivated": false,
+    "kite.showWelcomeNotificationOnStartup": false,
     "minapp-vscode.disableAutoConfig": true,
     "phpcs.executablePath": "vendor/bin/phpcs",
     "phpcs.showSources": true,
     "phpcs.standard": "PSR2",
     "python.jediEnabled": false,
+    "path-intellisense.mappings": {
+        "@": "${workspaceRoot}/src"
+    },
     "powermode.enabled": true,
     "prettier.singleQuote": true,
     "prettier.semi": false,
+    "redhat.telemetry.enabled": false,
+    "settingsSync.ignoredExtensions": [],
+    "tabnine.experimentalAutoImports": true,
     "terminal.integrated.fontSize": 14,
     "vetur.format.defaultFormatterOptions": {
         "js-beautify-html": {
@@ -85,7 +99,25 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Default Light+",
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
