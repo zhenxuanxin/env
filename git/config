@@ -2,6 +2,9 @@
 	editor = vim
 	autocrlf = input
 	safecrlf = true
+	quotepath = false
+[credential]
+	helper = store
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -12,7 +15,5 @@
 [http "https://github.com"]
 	proxy = http://127.0.0.1:1080
 [push]
+	autoSetupRemote = true
 	default = simple
-[user]
-	name = "Xuanxin Zhen"
-	email = "xuanxin.zhen@gmail.com"
