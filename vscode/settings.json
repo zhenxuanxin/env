@@ -1,11 +1,12 @@
 {
+    "dateTime.customFormat": "YYYY-MM-DD HH:mm:ss.SSS",
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     },
-    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSmoothCaretAnimation": "on",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.fontSize": 18,
+    "editor.fontSize": 20,
     "editor.fontFamily": "Consolas,'Courier New','DejaVu Sans Mono',‘Droid Sans Mono’,Menlo,Monaco,monospace,'Source Code Pro','Ubuntu Mono'",
     "editor.formatOnSave": true,
     "editor.quickSuggestions": {
@@ -54,14 +55,29 @@
     "files.trimTrailingWhitespace": true,
     "git.autofetch": true,
     "git.confirmSync": false,
+    "gitlens.ai.experimental.provider": "openai",
+    "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
+    "gitlens.autolinks": [
+        {
+            "prefix": "VP-",
+            "url": "http://jira.virtaitech.com/browse/VP-<num>",
+            "alphanumeric": false,
+            "ignoreCase": false
+        }
+    ],
+    "gitlens.graph.layout": "editor",
     "gitlens.hovers.currentLine.over": "line",
-    "go.autocompleteUnimportedPackages": true,
+    "gitlens.launchpad.indicator.enabled": false,
+    "gitlens.launchpad.indicator.polling.enabled": false,
+    "gitlens.views.commitDetails.files.layout": "list",
     "go.formatTool": "gofmt",
     "go.toolsManagement.autoUpdate": true,
-    "go.useLanguageServer": false,
+    "go.useLanguageServer": true,
     "hediet.vscode-drawio.theme": "automatic",
-    "hediet.vscode-drawio.codeLinkActivated": false,
+    "hediet.vscode-drawio.codeLinkActivated": true,
+    "http.proxy": "http://127.0.0.1:1080",
     "kite.showWelcomeNotificationOnStartup": false,
+    "makefile.configureOnOpen": true,
     "minapp-vscode.disableAutoConfig": true,
     "phpcs.executablePath": "vendor/bin/phpcs",
     "phpcs.showSources": true,
@@ -74,9 +90,12 @@
     "prettier.singleQuote": true,
     "prettier.semi": false,
     "redhat.telemetry.enabled": false,
+    "rust-analyzer.server.path": "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rust-analyzer",
     "settingsSync.ignoredExtensions": [],
     "tabnine.experimentalAutoImports": true,
+    "telemetry.telemetryLevel": "error",
     "terminal.integrated.fontSize": 14,
+    "update.mode": "manual",
     "vetur.format.defaultFormatterOptions": {
         "js-beautify-html": {
             // force-aligned | force-expand-multiline
@@ -97,11 +116,15 @@
     "vim.foldfix": true,
     "vim.useSystemClipboard": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "window.zoomLevel": 0,
-    "workbench.colorTheme": "Default Light+",
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "enabled",
+        "vs-kubernetes.minikube-show-information-expiration": "2026-01-25T01:50:58.906Z"
+    },
+    "window.titleBarStyle": "native",
+    "window.autoDetectColorScheme": true,
+    "workbench.colorTheme": "Default Light Modern",
     "[dart]": {
         "editor.formatOnSave": true,
-        "editor.formatOnType": true,
         "editor.rulers": [
             80
         ],
@@ -109,7 +132,16 @@
         "editor.suggest.snippetsPreventQuickSuggestions": false,
         "editor.suggestSelection": "first",
         "editor.tabCompletion": "onlySnippets",
-        "editor.wordBasedSuggestions": false
+        "editor.wordBasedSuggestions": "off"
+    },
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -117,7 +149,19 @@
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[proto3]": {
+        "editor.defaultFormatter": "zxh404.vscode-proto3"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "mtxr.sqltools"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
 }
