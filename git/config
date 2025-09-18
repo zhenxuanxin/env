@@ -12,8 +12,21 @@
 	required = true
 [http]
 	sslVerify = true
-[http "https://github.com"]
-	proxy = http://127.0.0.1:1080
+#[http "https://github.com"]
+#	proxy = http://127.0.0.1:1080
+[http "https://gitlab.virtaitech.com"]
+	sslVerify = false
+[http "https://gitlab.yellow.virtaitech.com"]
+	sslVerify = false
+[url "git@gitlab.virtaitech.com:"]
+	insteadOf = https://gitlab.virtaitech.com/
+[url "git@gitlab.yellow.virtaitech.com:"]
+	insteadOf = https://gitlab.yellow.virtaitech.com/
+[init]
+       defaultBranch = main
 [push]
 	autoSetupRemote = true
 	default = simple
+[user]
+	name = Xuanxin Zhen
+	email = zhenxuanxin@virtaitech.com
