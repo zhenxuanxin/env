@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export HTTP_PROXY="http://127.0.0.1:1080"
+export HTTPS_PROXY="${HTTP_PROXY}"
+
+curl 'https://api.ipify.org'
