@@ -17,7 +17,7 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -82,7 +82,6 @@ plugins=(
   kubectl
   kubectx
   minikube
-  marktext
   sudo
 )
 
@@ -120,35 +119,5 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
-source ~/.profile
-
 # 不要放到 .zprofile 或者 .profile 中，不然会报错：/dev/fd/13:2: command not found: compdef
 source <(kubebuilder completion zsh)
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-  eval "$__conda_setup"
-else
-  if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-    . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-  else
-    export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
-  fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:$HOME/.cache/lm-studio/bin"
-
-# Added by Windsurf
-export PATH="$HOME/.codeium/windsurf/bin:$PATH"
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=($HOME/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions

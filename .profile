@@ -26,24 +26,35 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+
 PATH="/home/vagrant/.composer/vendor/bin:$PATH"
 
-export GOPROXY=https://goproxy.io
-alias np="NO_PROXY=127.0.0.1,localhost"
-alias hp="HTTP_PROXY=http://127.0.0.1:1080"
-alias fp="FTP_PROXY=http://127.0.0.1:1080"
-alias hps="HTTPS_PROXY=http://127.0.0.1:1080"
+export GOPRIVATE="gitlab.yellow.virtaitech.com,gitlab.virtaitech.com"
+export GOINSECURE="gitlab.yellow.virtaitech.com,gitlab.virtaitech.com"
+export GONOPROXY="gitlab.yellow.virtaitech.com,gitlab.virtaitech.com"
+export GOPROXY="https://goproxy.cn,direct"
+export PATH="$HOME/go/bin:${PATH}"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-alias composer="php $HOME/.local/bin/composer.phar $*"
-alias phpcs="vendor/bin/phpcs"
-alias phpcbf="vendor/bin/phpcbf"
-alias phpmd="vendor/bin/phpmd"
-alias php-cs-fixer="vendor/bin/php-cs-fixer"
-alias phpunit="vendor/bin/phpunit"
+export RUSTUP_UPDATE_ROOT="https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup"
+export RUSTUP_DIST_SERVER="https://mirrors.tuna.tsinghua.edu.cn/rustup"
+. "$HOME/.cargo/env"
 
-alias open="gio open"
-alias rm="rm -v"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias k2m="kubectl config use-context minikube"
-alias k2dev="kubectl config use-context dev-7"
-alias k2test="kubectl config use-context test-7"
+export WASMTIME_HOME="$HOME/.wasmtime"
+export PATH="$WASMTIME_HOME/bin:$PATH"
+
+export NEUWARE_HOME="/usr/local/neuware"
+export PATH="${NEUWARE_HOME}/bin:${PATH}"
+#export PATH="${NEUWARE_HOME}/lib/llvm-mm/bin":$PATH
+export LD_LIBRARY_PATH="${NEUWARE_HOME}/lib64:${LD_LIBRARY_PATH}"
+#export LD_LIBRARY_PATH="${NEUWARE_HOME}/lib/llvm-mm/lib:${LD_LIBRARY_PATH}"
+
+export NO_PROXY="192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,127.0.0.1,localhost,*.local"
