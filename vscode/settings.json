@@ -75,7 +75,7 @@
     "go.useLanguageServer": true,
     "hediet.vscode-drawio.theme": "automatic",
     "hediet.vscode-drawio.codeLinkActivated": true,
-    "http.proxy": "http://127.0.0.1:1080",
+    // "http.proxy": "http://127.0.0.1:1080",
     "kite.showWelcomeNotificationOnStartup": false,
     "makefile.configureOnOpen": true,
     "minapp-vscode.disableAutoConfig": true,
@@ -134,6 +134,20 @@
         "editor.tabCompletion": "onlySnippets",
         "editor.wordBasedSuggestions": "off"
     },
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
     "[go]": {
         "editor.defaultFormatter": "golang.go"
     },
@@ -147,7 +161,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
@@ -163,5 +177,5 @@
     },
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
+    }
 }
