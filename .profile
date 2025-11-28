@@ -58,3 +58,29 @@ export LD_LIBRARY_PATH="${NEUWARE_HOME}/lib64:${LD_LIBRARY_PATH}"
 #export LD_LIBRARY_PATH="${NEUWARE_HOME}/lib/llvm-mm/lib:${LD_LIBRARY_PATH}"
 
 export NO_PROXY="192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,127.0.0.1,localhost,*.local"
+
+# To handle deletion operations safely, replace the rm command
+# with an operating system-specific command such as mv or trash.
+function rm() {
+    case $(uname -s) in
+        d|Darwin)
+            if command -v trash > /dev/null; then
+                # echo "rm is alias to trash"
+                trash $@
+            else
+                mkdir -p ~/.trash
+                if command -v gmv > /dev/null; then
+                    # echo "rm is alias to gmv -v -t"
+                    gmv -v -t ~/.trash/ $@
+                else
+                    # echo "rm is alias to mv -v"
+                    mv -v $@ ~/.trash/
+                fi
+            fi
+            ;;
+        l|Linux)
+            # echo "rm is alias to mv -v -t"
+            mv -v -t ~/.trash/ $@
+            ;;
+    esac
+}

@@ -11,7 +11,6 @@ alias php-cs-fixer="vendor/bin/php-cs-fixer"
 alias phpunit="vendor/bin/phpunit"
 
 alias open="gio open"
-alias rm="rm -v"
 
 alias ctr="sudo ctr -n k8s.io"
 alias nerdctl="sudo nerdctl -n k8s.io"
