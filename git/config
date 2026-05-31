@@ -1,6 +1,6 @@
 [core]
 	editor = vim
-	autocrlf = input
+	autocrlf = input # should be set true on Windows OS
 	safecrlf = true
 	quotepath = false
 [credential]
@@ -13,13 +13,17 @@
 [http]
 	sslVerify = true
 #[http "https://github.com"]
-#	proxy = http://127.0.0.1:1080
+#	proxy = http://127.0.0.1:7897
 [http "https://gitlab.virtaitech.com"]
 	sslVerify = false
 [http "https://gitlab.yellow.virtaitech.com"]
 	sslVerify = false
 [url "git@gitlab.virtaitech.com:"]
 	insteadOf = https://gitlab.virtaitech.com/
+[url "git@c.git.lab.tp:"]
+	insteadOf = http://git.lab.tp/
+[url "git@c.git.lab.tp:"]
+	insteadOf = https://git.lab.tp/
 [url "git@gitlab.yellow.virtaitech.com:"]
 	insteadOf = https://gitlab.yellow.virtaitech.com/
 [init]
@@ -28,5 +32,5 @@
 	autoSetupRemote = true
 	default = simple
 [user]
-	name = Xuanxin Zhen
-	email = zhenxuanxin@virtaitech.com
+	name = Zhēn Xuānxīn
+	email = zhenxuanxin@gmail.com
