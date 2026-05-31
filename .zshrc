@@ -1,5 +1,26 @@
+# 用于检测 zsh 性能，解除注释后用如下命令排查：
+# time zsh -i -c exit
+# zsh -i -c 'zprof' 2>&1 | head -30
+#zmodload zsh/zprof
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/zxx/.oh-my-zsh/custom/completions" $fpath)
+# OPENSPEC:END
+
+# Docker CLI completions (fpath must be set before compinit)
+fpath=(/Users/zxx/.docker/completions $fpath)
+
+# Added by Windsurf
+export PATH="/Users/zxx/.codeium/windsurf/bin:$PATH"
+
+export PATH="/usr/local/opt/rustup/bin:$PATH"
+
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -77,14 +98,18 @@ plugins=(
   docker-compose
   git
   golang
-  helm
+  #helm
   jsontools
-  kubectl
-  kubectx
-  minikube
-  sudo
+  #kubectl
+  #kubectx
+  #minikube
+  #npm
+  #sudo
+  #yarn
 )
 
+# 告诉 oh-my-zsh 跳过 compaudit 的权限检查
+export ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -120,4 +145,14 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # 不要放到 .zprofile 或者 .profile 中，不然会报错：/dev/fd/13:2: command not found: compdef
-source <(kubebuilder completion zsh)
+# kubebuilder completion（缓存到文件，避免每次 fork）
+if [[ ! -f ~/.zsh_kubebuilder_completion ]] || [[ -n ~/.zsh_kubebuilder_completion(#qN.md+7) ]]; then
+  kubebuilder completion zsh > ~/.zsh_kubebuilder_completion 2>/dev/null
+fi
+source ~/.zsh_kubebuilder_completion 2>/dev/null
+
+# OpenClaw Completion
+source "/Users/zxx/.openclaw/completions/openclaw.zsh"
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

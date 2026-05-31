@@ -1,3 +1,6 @@
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/profile.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/profile.pre.bash"
+
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
@@ -26,27 +29,35 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+export GOPRIVATE="git.lab.tp,gitlab.yellow.virtaitech.com,gitlab.virtaitech.com"
+export GOINSECURE="git.lab.tp,gitlab.yellow.virtaitech.com,gitlab.virtaitech.com"
+export GONOPROXY="git.lab.tp,gitlab.yellow.virtaitech.com,gitlab.virtaitech.com"
+export GOPROXY="https://goproxy.cn,direct"
+export PATH="$HOME/go/bin:${PATH}"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 
-PATH="$HOME/.composer/vendor/bin:$PATH"
-
-export GOPRIVATE="gitlab.yellow.virtaitech.com,gitlab.virtaitech.com"
-export GOINSECURE="gitlab.yellow.virtaitech.com,gitlab.virtaitech.com"
-export GONOPROXY="gitlab.yellow.virtaitech.com,gitlab.virtaitech.com"
-export GOPROXY="https://goproxy.cn,direct"
-export PATH="$HOME/go/bin:${PATH}"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
 export RUSTUP_UPDATE_ROOT="https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup"
 export RUSTUP_DIST_SERVER="https://mirrors.tuna.tsinghua.edu.cn/rustup"
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# lazy load nvm，只有真正用到 nvm/node/npm 时才加载
+function nvm() {
+  unfunction nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  nvm "$@"
+}
+function node() { nvm use --silent; node "$@" }
+function npm()  { nvm use --silent; npm "$@" }
+function npx()  { nvm use --silent; npx "$@" }
 
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
@@ -59,28 +70,47 @@ export LD_LIBRARY_PATH="${NEUWARE_HOME}/lib64:${LD_LIBRARY_PATH}"
 
 export NO_PROXY="192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,127.0.0.1,localhost,*.local"
 
+[ -f "$HOME/.env" ] && . "$HOME/.env"
+
+function myip() {
+    curl https://myip.ipip.net/
+}
+
 # To handle deletion operations safely, replace the rm command
 # with an operating system-specific command such as mv or trash.
 function rm() {
+    # 把参数分成 flags 和 paths 两组
+    local flags=()
+    local paths=()
+    for arg in "$@"; do
+        if [[ "$arg" == -* ]]; then
+            flags+=("$arg")
+        else
+            paths+=("$arg")
+        fi
+    done
     case $(uname -s) in
-        d|Darwin)
+        Darwin)
             if command -v trash > /dev/null; then
-                # echo "rm is alias to trash"
-                trash $@
+                echo "rm is alias to trash"
+                trash "${paths[@]}"
             else
                 mkdir -p ~/.trash
                 if command -v gmv > /dev/null; then
-                    # echo "rm is alias to gmv -v -t"
-                    gmv -v -t ~/.trash/ $@
+                    echo "rm is alias to gmv -v -t"
+                    gmv -v -t ~/.trash/ "${paths[@]}"
                 else
-                    # echo "rm is alias to mv -v"
-                    mv -v $@ ~/.trash/
+                    echo "rm is alias to mv -v"
+                    mv -v "${paths[@]}" ~/.trash/
                 fi
             fi
             ;;
-        l|Linux)
-            # echo "rm is alias to mv -v -t"
-            mv -v -t ~/.trash/ $@
+        Linux)
+            echo "rm is alias to mv -v -t"
+            mv -v -t ~/.trash/ "${paths[@]}"
             ;;
     esac
 }
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/profile.post.bash"
